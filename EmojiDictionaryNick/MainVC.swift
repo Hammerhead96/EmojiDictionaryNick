@@ -9,7 +9,7 @@
 import UIKit
 
 class MainVC: UITableViewController {
-    var emojis = ["😍", "😁", "🤪", "😎", "🤑", "👽", "😤", "😻", "💩", "🤮"]
+    var emojis = ["😍", "😁", "🤪", "😎", "🤑", "👽", "😤", "😻", "💩", "🤮", "🤡", "🏎"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,10 @@ class MainVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = emojis[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToDetail", sender: nil)
     }
     
  
