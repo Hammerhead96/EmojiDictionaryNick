@@ -7,36 +7,34 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DetailVC: UIViewController {
-    
+    var player = AVAudioPlayer()
+    let backPath = Bundle.main.path(forResource:"return", ofType: "mp3")
     @IBOutlet weak var emojiLbl: UILabel!
-    
+    @IBOutlet weak var emojiCategory: UILabel!
     @IBOutlet weak var emojiDef: UILabel!
-    
-    var emoji = ""
-    
+    var emoji = Emoji()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        emojiLbl.text = emoji
-        // "😍", "😁", "🤪", "😎", "🤑", "👽", "😤", "😻", "💩", "🤮", "🤡", "🏎", "🚔"
-        switch emoji {
-        case "😍": emojiDef.text = "Love eyes grin."
-        case "😁": emojiDef.text = "Cheesy grin."
-        case "🤪": emojiDef.text = "Tilted googley eyes and tongue."
-        case "😎": emojiDef.text = "Cool in sunglasses."
-        case "🤑": emojiDef.text = "The tongue is money!"
-        case "👽": emojiDef.text = "A grinning Grey."
-        case "😤": emojiDef.text = "So pissed!"
-        case "😻": emojiDef.text = "Kitty heart eyes."
-        case "💩": emojiDef.text = "Happy poo!"
-        case "🤮": emojiDef.text = "Projectile vomit."
-        case "🤡": emojiDef.text = "A Clown."
-        case "🏎": emojiDef.text = "Swift Indy car."
-        case "🚔": emojiDef.text = "Da Police, Yo!"
-        default: print("There has been an error!")
+        self.navigationItem.hidesBackButton = true
+        let myBackButton = UIBarButtonItem(title: "back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(DetailVC.back(sender:)))
+        self.navigationItem.leftBarButtonItem = myBackButton
+        emojiLbl.text = emoji.image
+        emojiCategory.text = emoji.category
+        emojiDef.text = emoji.def
+    }
+    
+    @objc func back(sender: UIBarButtonItem) {
+        do {
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: backPath!))
+        } catch {
+            print("crap for page turning")
         }
+        player.play()
+        _ = navigationController?.popViewController(animated: true)
     }
 
 }

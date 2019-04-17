@@ -63,7 +63,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Clown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdL-rC-WjE">
-                                <rect key="frame" x="10" y="636" width="355" height="21"/>
+                                <rect key="frame" x="10" y="617" width="355" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="y0g-O5-lvd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yd-H9-GAK">
+                                <rect key="frame" x="0.0" y="584" width="375" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="qXi-2v-3Gv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,12 +86,16 @@
                             <constraint firstItem="nd9-kV-Gld" firstAttribute="centerX" secondItem="9dQ-g0-OBH" secondAttribute="centerX" id="2Pp-3g-BIc"/>
                             <constraint firstItem="KxL-HR-Gxh" firstAttribute="bottom" secondItem="qdL-rC-WjE" secondAttribute="bottom" constant="10" id="LWh-hs-e5m"/>
                             <constraint firstItem="KxL-HR-Gxh" firstAttribute="trailing" secondItem="qdL-rC-WjE" secondAttribute="trailing" constant="10" id="MoG-2r-Omp"/>
+                            <constraint firstItem="KxL-HR-Gxh" firstAttribute="trailing" secondItem="5Yd-H9-GAK" secondAttribute="trailing" id="WCG-zi-U4i"/>
                             <constraint firstItem="qdL-rC-WjE" firstAttribute="leading" secondItem="KxL-HR-Gxh" secondAttribute="leading" constant="10" id="WvZ-gP-LKJ"/>
                             <constraint firstItem="nd9-kV-Gld" firstAttribute="top" secondItem="KxL-HR-Gxh" secondAttribute="top" constant="20" id="XFR-c8-Ga2"/>
+                            <constraint firstItem="qdL-rC-WjE" firstAttribute="top" secondItem="5Yd-H9-GAK" secondAttribute="bottom" constant="8" id="XtK-r8-wEF"/>
+                            <constraint firstItem="5Yd-H9-GAK" firstAttribute="leading" secondItem="KxL-HR-Gxh" secondAttribute="leading" id="dI4-La-S1f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KxL-HR-Gxh"/>
                     </view>
                     <connections>
+                        <outlet property="emojiCategory" destination="5Yd-H9-GAK" id="BvK-Bu-otA"/>
                         <outlet property="emojiDef" destination="qdL-rC-WjE" id="TYT-S7-WCL"/>
                         <outlet property="emojiLbl" destination="nd9-kV-Gld" id="anj-Fd-lBU"/>
                     </connections>
