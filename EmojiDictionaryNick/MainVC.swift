@@ -38,42 +38,63 @@ class MainVC: UITableViewController {
         performSegue(withIdentifier: "ToDetail", sender: emoji)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let emojiDefVC = segue.destination as! DetailVC
-        emojiDefVC.emoji = sender as! Emoji
+        if let emojiDefVC = segue.destination as? DetailVC {
+            if let emoji = sender as? Emoji {
+                emojiDefVC.emoji = emoji
+            }
+            //emojiDefVC.emoji = sender as!
+        }
     }
     func createEmojis() -> [Emoji] {
-        let 😍 = Emoji()
-        😍.image = "😍"; 😍.def = "Heart eyes grin."; 😍.category = Emoji.Category.one.rawValue
-        let 😁 = Emoji()
-        😁.image = "😁"; 😁.def = "Cheesy grin."; 😁.category = Emoji.Category.one.rawValue
-        let 🤪 = Emoji()
-        🤪.image = "🤪"; 🤪.def = "Goofy face." ; 🤪.category = Emoji.Category.one.rawValue
-        let 😎 = Emoji()
-        😎.image = "😎"; 😎.def = "Cool in sunglasses."; 😎.category = Emoji.Category.one.rawValue
-        let 🤑 = Emoji()
-        🤑.image = "🤑"; 🤑.def = "Money-Mouth face."; 🤑.category = Emoji.Category.one.rawValue
-        let 👽 = Emoji()
-        👽.image = "👽"; 👽.def = "A grinning Grey."; 👽.category = Emoji.Category.one.rawValue
-        let 😤 = Emoji()
-        😤.image = "😤"; 😤.def = "Huffing with anger."; 😤.category = Emoji.Category.one.rawValue
-        let 😻 = Emoji()
-        😻.image = "😻"; 😻.def = "Kitty heart eyes."; 😻.category = Emoji.Category.one.rawValue
-        let 💩 = Emoji()
-        💩.image = "💩"; 💩.def = "Happy poop!"; 💩.category = Emoji.Category.one.rawValue
-        let 🤮 = Emoji()
-        🤮.image = "🤮"; 🤮.def = "Vomitting face."; 🤮.category = Emoji.Category.one.rawValue
-        let 🤡 = Emoji()
-        🤡.image = "🤡"; 🤡.def = "Clown face."; 🤡.category = Emoji.Category.one.rawValue
-        let 🏎 = Emoji()
-        🏎.image = "🏎"; 🏎.def = "Swift Indy car."; 🏎.category = Emoji.Category.two.rawValue
-        let 🚔 = Emoji()
-        🚔.image = "🚔"; 🚔.def = "Da Police, Yo!"; 🚔.category = Emoji.Category.two.rawValue
-        let 🐼 = Emoji()
-        🐼.image = "🐼"; 🐼.def = "Panda Face."; 🐼.category = Emoji.Category.three.rawValue
-        let 🧀 = Emoji()
-        🧀.image = "🧀"; 🧀.def = "Cheese Wedge"; 🧀.category = Emoji.Category.four.rawValue
-        let 🤺 = Emoji()
-        🤺.image = "🤺"; 🤺.def = "Fencer"; 🤺.category = Emoji.Category.five.rawValue
+        let 😍 = Emoji(image: "😍", def: "Heart eyes grin.", category: Emoji.Category.one.rawValue)
+        let 😁 = Emoji(image: "😁", def: "Cheesy grin.", category: Emoji.Category.one.rawValue)
+        let 🤪 = Emoji(image: "🤪", def: "Goofy face.", category: Emoji.Category.one.rawValue)
+        let 😎 = Emoji(image: "😎", def: "Cool in sunglasses.", category: Emoji.Category.one.rawValue)
+        let 🤑 = Emoji(image: "🤑", def: "Money-Mouth face.", category: Emoji.Category.one.rawValue)
+        let 👽 = Emoji(image: "👽", def: "A grinning Grey.", category: Emoji.Category.one.rawValue)
+        let 😤 = Emoji(image: "😤", def: "Huffing with anger.", category: Emoji.Category.one.rawValue)
+        let 😻 = Emoji(image: "😻", def: "Kitty heart eyes.", category: Emoji.Category.one.rawValue)
+        let 💩 = Emoji(image: "💩", def: "Happy poop!", category: Emoji.Category.one.rawValue)
+        let 🤮 = Emoji(image: "🤮", def: "Vomitting face.", category: Emoji.Category.one.rawValue)
+        let 🤡 = Emoji(image: "🤡", def: "Clown face.", category: Emoji.Category.one.rawValue)
+        let 🏎 = Emoji(image: "🏎", def: "Swift Indy car.", category: Emoji.Category.two.rawValue)
+        let 🚔 = Emoji(image: "🚔", def: "Da Police, Yo!", category: Emoji.Category.two.rawValue)
+        let 🐼 = Emoji(image: "🐼", def: "Panda Face.", category: Emoji.Category.three.rawValue)
+        let 🧀 = Emoji(image: "🧀", def: "Cheese Wedge", category: Emoji.Category.four.rawValue)
+        let 🤺 = Emoji(image: "🤺", def: "Fencer", category: Emoji.Category.five.rawValue)
         return [😍, 😁, 🤪, 😎, 🤑, 👽, 😤, 😻, 💩, 🤮, 🤡, 🏎, 🚔, 🐼, 🧀, 🤺]
+//        let 😍 = Emoji()
+//        😍.image = "😍"; 😍.def = "Heart eyes grin."; 😍.category = Emoji.Category.one.rawValue
+//        let 😁 = Emoji()
+//        😁.image = "😁"; 😁.def = "Cheesy grin."; 😁.category = Emoji.Category.one.rawValue
+//        let 🤪 = Emoji()
+//        🤪.image = "🤪"; 🤪.def = "Goofy face." ; 🤪.category = Emoji.Category.one.rawValue
+//        let 😎 = Emoji()
+//        😎.image = "😎"; 😎.def = "Cool in sunglasses."; 😎.category = Emoji.Category.one.rawValue
+//        let 🤑 = Emoji()
+//        🤑.image = "🤑"; 🤑.def = "Money-Mouth face."; 🤑.category = Emoji.Category.one.rawValue
+//        let 👽 = Emoji()
+//        👽.image = "👽"; 👽.def = "A grinning Grey."; 👽.category = Emoji.Category.one.rawValue
+//        let 😤 = Emoji()
+//        😤.image = "😤"; 😤.def = "Huffing with anger."; 😤.category = Emoji.Category.one.rawValue
+//        let 😻 = Emoji()
+//        😻.image = "😻"; 😻.def = "Kitty heart eyes."; 😻.category = Emoji.Category.one.rawValue
+//        let 💩 = Emoji()
+//        💩.image = "💩"; 💩.def = "Happy poop!"; 💩.category = Emoji.Category.one.rawValue
+//        let 🤮 = Emoji()
+//        🤮.image = "🤮"; 🤮.def = "Vomitting face."; 🤮.category = Emoji.Category.one.rawValue
+//        let 🤡 = Emoji()
+//        🤡.image = "🤡"; 🤡.def = "Clown face."; 🤡.category = Emoji.Category.one.rawValue
+//        let 🏎 = Emoji()
+//        🏎.image = "🏎"; 🏎.def = "Swift Indy car."; 🏎.category = Emoji.Category.two.rawValue
+//        let 🚔 = Emoji()
+//        🚔.image = "🚔"; 🚔.def = "Da Police, Yo!"; 🚔.category = Emoji.Category.two.rawValue
+//        let 🐼 = Emoji()
+//        🐼.image = "🐼"; 🐼.def = "Panda Face."; 🐼.category = Emoji.Category.three.rawValue
+//        let 🧀 = Emoji()
+//        🧀.image = "🧀"; 🧀.def = "Cheese Wedge"; 🧀.category = Emoji.Category.four.rawValue
+//        let 🤺 = Emoji()
+//        🤺.image = "🤺"; 🤺.def = "Fencer"; 🤺.category = Emoji.Category.five.rawValue
+//        return [😍, 😁, 🤪, 😎, 🤑, 👽, 😤, 😻, 💩, 🤮, 🤡, 🏎, 🚔, 🐼, 🧀, 🤺]
     }
 }

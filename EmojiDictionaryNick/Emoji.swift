@@ -17,13 +17,13 @@ class Emoji {
         case two = "Travel and Places"
         case three = "Animals and Nature"
         case four = "Food and Drink"
-        case five = "Activities"
+        case five = "Activity"
     }
-//    init (image: String, def: String, category: String) {
-//        self.image = image
-//        self.def = def
-//        self.category = category
-//    }
+    init (image: String, def: String, category: String) {
+        self.image = image
+        self.def = def
+        self.category = category
+    }
 }
 //        let 😍 = Emoji(image: "😍", def: "Heart eyes grin.", category: Emoji.Category.one.rawValue)
 //        let 😁 = Emoji(image: "😁", def: "Cheesy grin.", category: Emoji.Category.one.rawValue)

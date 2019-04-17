@@ -15,7 +15,8 @@ class DetailVC: UIViewController {
     @IBOutlet weak var emojiLbl: UILabel!
     @IBOutlet weak var emojiCategory: UILabel!
     @IBOutlet weak var emojiDef: UILabel!
-    var emoji = Emoji()
+    var previousVC = MainVC()
+    var emoji = Emoji(image: "", def: "", category: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
